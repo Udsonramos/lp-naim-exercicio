@@ -68,6 +68,12 @@ header{
     transition: all 0.2s ease;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .hero{
     display: flex;
     flex-direction: column;
@@ -300,3 +306,62 @@ header{
     object-fit: cover;
 }
 
+.complemento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.complemento div{
+    color: #ede5db;
+    margin-top: 10px;
+}
+
+.complemento h1{
+    text-align: center;
+    font-size: 3rem;
+    color: #b8f18a;
+}
+
+.complemento>div>p{
+    padding: 15px;
+}
+
+.pFrequentes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ede5db;
+}
+
+.perguntas{
+    width: 90%;
+    box-sizing: border-box;
+    border-top: none;
+    border-bottom: 0.3px solid #212121;
+    border-left: none;
+    border-right: none;
+}
+
+.abrirComentarios{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.abrirComentarios img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.pFrequentes h1{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.texto{
+    display: none;
+}
