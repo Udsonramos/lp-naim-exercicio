@@ -47,5 +47,38 @@ class IconesEImagens {
     }
 }
 const galera = new IconesEImagens("imgsAtivo");
+//Perguntas frequentes
+class PerguntasFreq {
+    botaoPlus;
+    text;
+    classOculta;
+    constructor(classOculta) {
+        this.botaoPlus = document.querySelectorAll(".botaoPlus");
+        this.text = document.querySelectorAll(".textos");
+        this.classOculta = classOculta;
+        this.inicializar();
+    }
+    inicializar() {
+        this.botaoPlus.forEach((bplus) => {
+            bplus.addEventListener("click", () => {
+                const idBotao = bplus.dataset.target;
+                if (idBotao) {
+                    this.addTexto(idBotao);
+                }
+            });
+        });
+    }
+    addTexto(idTt) {
+        this.text.forEach((txt) => {
+            txt.classList.add(this.classOculta);
+        });
+        const exibirTexto = document.getElementById(idTt);
+        if (exibirTexto) {
+            console.log("ok");
+            exibirTexto.classList.toggle(this.classOculta);
+        }
+    }
+}
+const pf = new PerguntasFreq("tt");
 export {};
 //# sourceMappingURL=script.js.map

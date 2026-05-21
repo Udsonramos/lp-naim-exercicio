@@ -67,3 +67,49 @@ class IconesEImagens{
 }
 
 const galera = new IconesEImagens("imgsAtivo")
+
+//Perguntas frequentes
+
+class PerguntasFreq{
+
+    private botaoPlus: NodeListOf<HTMLButtonElement>;
+    private text: NodeListOf<HTMLElement>;
+    public classOculta
+
+    constructor(classOculta: string){
+        this.botaoPlus = document.querySelectorAll<HTMLButtonElement>(".botaoPlus")
+        this.text = document.querySelectorAll<HTMLElement>(".textos")
+        this.classOculta = classOculta
+
+        this.inicializar()
+    }
+
+    private inicializar(): void{
+
+        this.botaoPlus.forEach((bplus)=>{
+
+            bplus.addEventListener("click", (): void => {
+                const idBotao = bplus.dataset.target
+
+                if(idBotao){
+                    this.addTexto(idBotao)
+                }
+            })
+        })
+    }
+
+    private addTexto(idTt: string){
+
+        this.text.forEach((txt)=>{
+            txt.classList.add(this.classOculta)
+        })
+
+        const exibirTexto = document.getElementById(idTt) as HTMLElement;
+        if(exibirTexto){
+            console.log("ok")
+            exibirTexto.classList.toggle(this.classOculta)
+        }
+    }
+}
+
+const pf = new PerguntasFreq("tt")
