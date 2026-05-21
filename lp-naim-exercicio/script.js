@@ -69,16 +69,12 @@ class PerguntasFreq {
         });
     }
     addTexto(idTt) {
-        this.text.forEach((txt) => {
-            txt.classList.add(this.classOculta);
-        });
         const exibirTexto = document.getElementById(idTt);
         if (exibirTexto) {
-            console.log("ok");
             exibirTexto.classList.toggle(this.classOculta);
         }
     }
 }
-const pf = new PerguntasFreq("tt");
+const pf = new PerguntasFreq("txt");
 export {};
 //# sourceMappingURL=script.js.map

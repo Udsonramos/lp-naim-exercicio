@@ -354,6 +354,7 @@ main{
 
 .abrirComentarios img{
     width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -362,6 +363,6 @@ main{
     text-align: center;
 }
 
-.tt{
+.txt{
     display: none;
 }
