@@ -334,10 +334,12 @@ main{
     flex-direction: column;
     align-items: center;
     background-color: #ede5db;
+    padding-bottom: 20px;
 }
 
 .perguntas{
     width: 90%;
+    height: auto;
     box-sizing: border-box;
     border-top: none;
     border-bottom: 0.3px solid #212121;
@@ -346,16 +348,24 @@ main{
 }
 
 .abrirComentarios{
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 20px;
     margin-top: 20px;
+    
 }
 
 .abrirComentarios img{
     width: 30px;
     height: 30px;
     cursor: pointer;
+
+    transition: transform 0.2s ease-in-out;
+}
+
+.abrirComentarios img:hover{
+    transform: rotate(90deg);
 }
 
 .pFrequentes h1{
@@ -363,6 +373,54 @@ main{
     text-align: center;
 }
 
+.textos{
+    color: #212121;
+    margin-bottom: 20px;
+}
+
 .txt{
-    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    z-index: 100;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: all 0.2s ease;
+    
+}
+
+.txtAtivo{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s ease;
+}
+
+.cta{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: url(Simbolo\ Offwhite\ v2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+
+    padding-top: 20px;
+}
+
+.cta h1{
+    width: 90%;
+    color: #ede5db;
+}
+
+.cta>h1>strong{
+    color: #b8f18a;
 }

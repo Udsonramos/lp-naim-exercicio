@@ -75,11 +75,13 @@ class PerguntasFreq{
     private botaoPlus: NodeListOf<HTMLButtonElement>;
     private text: NodeListOf<HTMLElement>;
     public classOculta
+    public classAtiva
 
-    constructor(classOculta: string){
+    constructor(classOculta: string, classAtiva: string){
         this.botaoPlus = document.querySelectorAll<HTMLButtonElement>(".botaoPlus")
         this.text = document.querySelectorAll<HTMLElement>(".textos")
         this.classOculta = classOculta
+        this.classAtiva = classAtiva
 
         this.inicializar()
     }
@@ -103,9 +105,14 @@ class PerguntasFreq{
         const exibirTexto = document.getElementById(idTt) as HTMLElement;
 
         if(exibirTexto){
-            exibirTexto.classList.toggle(this.classOculta)
+            if(exibirTexto.classList.contains(this.classOculta)){
+                exibirTexto.classList.replace(this.classOculta,this.classAtiva)
+            }else if(exibirTexto.classList.contains(this.classAtiva)){
+                exibirTexto.classList.replace(this.classAtiva,this.classOculta)
+            }
+            //exibirTexto.classList.toggle(this.classOculta)
         }
     }
 }
 
-const pf = new PerguntasFreq("txt")
+const pf = new PerguntasFreq("txt","txtAtivo")

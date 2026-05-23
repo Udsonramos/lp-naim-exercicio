@@ -52,10 +52,12 @@ class PerguntasFreq {
     botaoPlus;
     text;
     classOculta;
-    constructor(classOculta) {
+    classAtiva;
+    constructor(classOculta, classAtiva) {
         this.botaoPlus = document.querySelectorAll(".botaoPlus");
         this.text = document.querySelectorAll(".textos");
         this.classOculta = classOculta;
+        this.classAtiva = classAtiva;
         this.inicializar();
     }
     inicializar() {
@@ -71,10 +73,16 @@ class PerguntasFreq {
     addTexto(idTt) {
         const exibirTexto = document.getElementById(idTt);
         if (exibirTexto) {
-            exibirTexto.classList.toggle(this.classOculta);
+            if (exibirTexto.classList.contains(this.classOculta)) {
+                exibirTexto.classList.replace(this.classOculta, this.classAtiva);
+            }
+            else if (exibirTexto.classList.contains(this.classAtiva)) {
+                exibirTexto.classList.replace(this.classAtiva, this.classOculta);
+            }
+            //exibirTexto.classList.toggle(this.classOculta)
         }
     }
 }
-const pf = new PerguntasFreq("txt");
+const pf = new PerguntasFreq("txt", "txtAtivo");
 export {};
 //# sourceMappingURL=script.js.map
