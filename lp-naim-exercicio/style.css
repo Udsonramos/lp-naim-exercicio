@@ -407,13 +407,26 @@ main{
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+
+    padding-top: 20px;
+}
+
+.cta::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
     background: url(Simbolo\ Offwhite\ v2.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 70%;
 
-    padding-top: 20px;
+    opacity: 0.1;
+    z-index: -1;
 }
 
 .cta h1{
@@ -423,4 +436,73 @@ main{
 
 .cta>h1>strong{
     color: #b8f18a;
+}
+
+.rodape{
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.rodape > p{
+    color: #ede5db;
+    padding: 10px;
+}
+
+.numeros{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    
+}
+
+.numeros h2{
+    color: #b8f18a;
+}
+
+.numeros h3{
+    color: #ede5db;
+}
+
+.blocos{
+    background-color: #212121;
+    padding: 10px;
+    border: 2px solid #ede5db;
+    border-radius: 10px;
+}
+
+.blocos:hover{
+    cursor: pointer;
+    background-color: #b8f18a2b;
+    border-color: #b8f18a;
+}
+
+.redesSociais{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 31px;
+    padding-top: 25px;
+}
+
+.redesSociais img{
+    background-color: #212121;
+    width: 40px;
+    padding: 10px;
+    border: 2px solid #ede5db;
+    border-radius: 10px;
+}
+
+.redesSociais img:hover{
+    background-color: #b8f18a2b;
+    border-color: #b8f18a;
+}
+
+.cnpj{
+    background-color: black;
+    color: #ede5db;
+    margin-top: 20px;
+    padding: 10px;
 }
